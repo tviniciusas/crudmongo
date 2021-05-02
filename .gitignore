@@ -6,7 +6,10 @@ bin-release/
 
 # Other files and folders
 .settings/
-*.src/database
+
+node_modules/
+src/database/
+
 
 # Executables
 *.swf

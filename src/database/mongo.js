@@ -13,7 +13,4 @@ mongoose.connect('mongodb://localhost/personapp', {
     console.log('error to conect '+ err)
 })
 
-
-//coment o test commit
-
 module.exports = mongoose
