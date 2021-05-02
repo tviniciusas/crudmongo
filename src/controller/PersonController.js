@@ -36,7 +36,7 @@ module.exports = {
 
         await Person.findOne({ _id: req.body.id}).then((persons) => {
 
-            persons.nome = req.body.nome
+            persons.name = req.body.name
             persons.gender = req.body.gender
             persons.age = req.body.age
 
@@ -47,7 +47,6 @@ module.exports = {
             }).catch(e =>{
                 console.log('error to update a person ' +e)
             })
-
         })
     },
 

@@ -1,14 +1,11 @@
 const express = require('express')
 const routes = express.Router()
-const urlencoded = express.urlencoded({
-    extended: true
-})
-const personController = require('./controller/PersonController')
+const urlencoded = express.urlencoded({ extended: true })
 const path = require('path')
+const personController = require('./controller/PersonController')
 
 routes.use(urlencoded)
 routes.use(express.static(path.join('public')))
-
 
 routes.get('/', personController.personIndex)
 routes.get('/add-new-person', personController.personRenderAdd)
