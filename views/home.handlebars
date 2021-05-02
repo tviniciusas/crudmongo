@@ -1,16 +1,25 @@
-List of users
+<br>
+<h1>List all persons on this app</h1>
+<br>
+<a href="/add-new-person"><button class="btn btn-primary">Add new person</button></a>
 <hr>
+<br>
 <table>
   <tr>
     <th>Name</th>
     <th>Age</th>
     <th>Gender</th>
+    <th>Update</th>
+    <th>Delete</th>
   </tr>
 {{#each results}}
   <tr>
-    <td>{{this.name}}</td>
-    <td>{{this.age}}</td>
-    <td>{{this.gender}}</td>
+    <td style="display:none">{{_id}}</td>
+    <td>{{name}}</td>
+    <td>{{age}}</td>
+    <td>{{gender}}</td>
+    <td> <a href="update-person/{{_id}}"> <button class="btn btn-warning">Update</button></td></a>
+    <td> <a href="delete-person/{{_id}}"> <button class="btn btn-danger">Delete</button></td></a>
   </tr>
-</table>
 {{/each}}
+</table>
