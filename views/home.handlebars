@@ -1,0 +1,16 @@
+List of users
+<hr>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+  </tr>
+{{#each results}}
+  <tr>
+    <td>{{this.name}}</td>
+    <td>{{this.age}}</td>
+    <td>{{this.gender}}</td>
+  </tr>
+</table>
+{{/each}}
