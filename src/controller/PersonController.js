@@ -34,8 +34,30 @@ module.exports = {
 
     async personUpdate (req,res) {
 
-        
+        await Person.findOne({ _id: req.body.id}).then((persons) => {
+
+            persons.nome = req.body.nome
+            persons.gender = req.body.gender
+            persons.age = req.body.age
+
+            console.log(persons)
+
+            persons.save().then(() =>{
+                res.redirect('/')
+            }).catch(e =>{
+                console.log('error to update a person ' +e)
+            })
+
+        })
+    },
+
+    async personFind (req,res) {
+        await Person.findOne({_id:req.params.id}).lean().then((person) => {
+            res.render('update-person' , {person} )
+        })
+    },
+
+    async personRenderAdd (req,res) {
+        res.render('add-new-person')
     }
-
-
 }
